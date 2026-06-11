@@ -138,4 +138,5 @@ function startAutoCloseJob() {
   });
 }
 
+require('http').createServer((req,res)=>res.end('ok')).listen(process.env.PORT||3000);
 client.login(process.env.DISCORD_TOKEN);
