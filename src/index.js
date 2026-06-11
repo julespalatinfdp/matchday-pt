@@ -6,6 +6,15 @@ const path = require('path');
 const { load, save } = require('./db');
 const { buildMatchEmbed, buildButtons } = require('./matchEmbed');
 
+
+function getParisDayKey() {
+  const now = new Date();
+  const parisDate = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/Paris' }));
+  const h = parisDate.getHours();
+  const d = new Date(parisDate);
+  if (h < 12) d.setDate(d.getDate() - 1);
+  return d.toISOString().slice(0, 10);
+}
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
 
 client.commands = new Collection();
@@ -94,7 +103,7 @@ client.on('interactionCreate', async interaction => {
 
     const userId   = interaction.user.id;
     const username = interaction.user.username;
-    const todayStr = new Date().toISOString().slice(0, 10);
+    const todayStr = getParisDayKey();
 
     if (!db.users[userId]) db.users[userId] = { totalPoints: 0, boostUsedToday: null, username };
     if (db.bets[matchId]?.[userId]) return interaction.update({ content: '❌ Aposta já registada.', embeds: [], components: [] });
