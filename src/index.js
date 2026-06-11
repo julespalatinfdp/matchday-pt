@@ -16,7 +16,7 @@ for (const file of fs.readdirSync(cmdDir).filter(f => f.endsWith('.js'))) {
 }
 
 client.once('ready', () => {
-  console.log(`✅ Bot connecté : ${client.user.tag}`);
+  process.stdout.write('✅ Bot connecté : ' + client.user.tag + '\n');
   startAutoCloseJob();
 });
 
