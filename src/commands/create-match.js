@@ -10,7 +10,7 @@ module.exports = {
     .setDescription('Criar uma aposta para um jogo')
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
     .addStringOption(o => o.setName('titre').setDescription('Nome do jogo').setRequired(true))
-    .addStringOption(o => o.setName('fermeture').setDescription('Fecho YYYY-MM-DD HH:MM (hora Paris)').setRequired(true))
+    .addStringOption(o => o.setName('fermeture').setDescription('Fecho YYYY-MM-DD HH:MM (hora Lisboa)').setRequired(true))
     .addStringOption(o => o.setName('choix1_label').setDescription('Opção 1').setRequired(true))
     .addStringOption(o => o.setName('choix1_cote').setDescription('Cota Opção 1').setRequired(true))
     .addStringOption(o => o.setName('choix2_label').setDescription('Opção 2').setRequired(true))
@@ -66,6 +66,6 @@ module.exports = {
       } catch(e) { console.error('[AdminLog]', e.message); }
     }
 
-    await interaction.editReply('Jogo criado! ID: `' + matchId + '`\nFecho : ' + fermeture + ' (Paris)');
+    await interaction.editReply('Jogo criado! ID: `' + matchId + '`\nFecho : ' + fermeture + ' (Lisboa)');
   },
 };
