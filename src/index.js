@@ -9,7 +9,7 @@ const { buildMatchEmbed, buildButtons } = require('./matchEmbed');
 
 function getParisDayKey() {
   const now = new Date();
-  const parisDate = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/Paris' }));
+  const parisDate = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/Lisbon' }));
   const h = parisDate.getHours();
   const d = new Date(parisDate);
   if (h < 12) d.setDate(d.getDate() - 1);

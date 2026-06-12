@@ -1,4 +1,4 @@
-function getParisDayKey() { const now = new Date(); const parisDate = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/Paris' })); const h = parisDate.getHours(); const d = new Date(parisDate); if (h < 12) d.setDate(d.getDate() - 1); return d.toISOString().slice(0, 10); }
+function getParisDayKey() { const now = new Date(); const parisDate = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/Lisbon' })); const h = parisDate.getHours(); const d = new Date(parisDate); if (h < 12) d.setDate(d.getDate() - 1); return d.toISOString().slice(0, 10); }
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { load } = require('../db');
 module.exports = {

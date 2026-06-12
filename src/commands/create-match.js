@@ -2,7 +2,7 @@ const { SlashCommandBuilder, PermissionFlagsBits, ChannelType } = require('disco
 const { load, save } = require('../db');
 const { buildMatchEmbed, buildButtons } = require('../matchEmbed');
 const { fromZonedTime } = require('date-fns-tz');
-const TZ = 'Europe/Paris';
+const TZ = 'Europe/Lisbon';
 
 module.exports = {
   data: new SlashCommandBuilder()
