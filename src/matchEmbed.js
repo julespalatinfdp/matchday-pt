@@ -18,8 +18,8 @@ function buildMatchEmbed(match) {
 function buildButtons(matchId, isOpen) {
   const row = new ActionRowBuilder().addComponents(
     new ButtonBuilder().setCustomId(`bet_${matchId}_1`).setLabel('🤙 Tranquilo (+2 pts)').setStyle(ButtonStyle.Secondary).setDisabled(!isOpen),
-    new ButtonBuilder().setCustomId(`bet_${matchId}_2`).setLabel('⚡ Jogador (+4 pts)').setStyle(ButtonStyle.Primary).setDisabled(!isOpen),
-    new ButtonBuilder().setCustomId(`bet_${matchId}_3`).setLabel('🔥 Mesmo jogador (+8 pts)').setStyle(ButtonStyle.Danger).setDisabled(!isOpen),
+    new ButtonBuilder().setCustomId(`bet_${matchId}_2`).setLabel('⚡ Audaz (+4 pts)').setStyle(ButtonStyle.Primary).setDisabled(!isOpen),
+    new ButtonBuilder().setCustomId(`bet_${matchId}_3`).setLabel('🔥 Lendário (+8 pts)').setStyle(ButtonStyle.Danger).setDisabled(!isOpen),
   );
   return row;
 }
